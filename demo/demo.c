@@ -10,7 +10,7 @@
 
 int main() {
     PIO pio = pio0;                             // PIO to use
-    uint gpio = 0;                              // GPIO for IR signal
+    uint gpio = 15;                              // GPIO for IR signal
 
     int sm = nec_tx_init(pio, gpio);            // initialise library
 
