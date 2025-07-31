@@ -28,4 +28,5 @@ set(CMAKE_CXX_STANDARD 17)
 pico_sdk_init()
 
 add_subdirectory(nec_transmit)
+add_subdirectory(rot_enc)
 add_subdirectory(demo)
