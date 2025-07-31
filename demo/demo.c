@@ -8,7 +8,6 @@
 #include "pico/stdlib.h"
 #include "nec_transmit.h"                       // library header
 #include "hardware/pio.h"
-#include "quadrature.pio.h"
 
 #define QUADRATURE_A_PIN 2
 #define QUADRATURE_B_PIN 3
@@ -41,16 +40,6 @@ int main() {
     where the low and high address bytes are the inverse of each other
     otherwise you may interfere with other devices nearby
     */
-
-
-    uint offsetA = pio_add_program(encoderPIO, &quadratureA_program);
-    uint smA = pio_claim_unused_sm(encoderPIO, true);
-
-    uint offsetB = pio_add_program(encoderPIO, &quadratureB_program);
-    uint smB = pio_claim_unused_sm(encoderPIO, true);
-
-    quadratureA_program_init(encoderPIO, smA, offsetA, QUADRATURE_A_PIN, QUADRATURE_B_PIN);
-    quadratureB_program_init(encoderPIO, smB, offsetB, QUADRATURE_A_PIN, QUADRATURE_B_PIN);
 
 
     while (true) {
